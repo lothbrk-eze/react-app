@@ -3,12 +3,15 @@ import { Link } from 'react-router-dom'
 
 
 const Navbar = () => {
+    // retrieve user from local storage
+    const loggeduser = JSON.parse (localStorage.getItem("user"))
+
   return (
     
-        <div class="">
+        <div class="bg-secondary">
     
-                <nav class="navbar navbar-expand-md navbar-light bg-white shadow">
-                    <a href="#" class="navbar-brand"><b className='text-danger'>Soko</b><b className='text-info'>Garden</b></a>
+                <nav class="navbar navbar-expand-md navbar-light bg-body shadow">
+                    <a href="#" class="navbar-brand"><b className='text-success'>Sky</b><b className='text-success'>world</b></a>
                     <button class="navbar-toggler"
                     data-bs-toggle="collapse"
                     data-bs-target="#navbarcollapse">
@@ -22,8 +25,13 @@ const Navbar = () => {
                  id="navbarcollapse">
              {/* links are */}
             
-             <Link to="/" className='btn mx-2'>Getproducts</Link>
-             <Link to="/addproduct" className='btn  mx-2'>Addproducts</Link>     
+             <Link to="/" className='btn mx-2 text-info'>Getproducts</Link>
+             <Link to="/addproduct" className='btn text-info  mx-2'>Addproducts</Link> 
+                 </div>
+                 
+                 {/* right hand of navbar */}
+                 <div className='ms-auto d-flex align-items-center gap-3'>
+                    logged in as : {loggeduser.email}
                  </div>
                 </nav>
             </div>
